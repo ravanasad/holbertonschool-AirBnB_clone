@@ -1,14 +1,28 @@
 #!/usr/bin/python3
+
+
+import unittest
 from models.base_model import BaseModel
 
-my_model = BaseModel()
-my_model.name = "My First Model"
-my_model.my_number = 89
-print(my_model)
-my_model.save()
-print(my_model)
-my_model_json = my_model.to_dict()
-print(my_model_json)
-print("JSON of my_model:")
-for key in my_model_json.keys():
-    print("\t{}: ({}) - {}".format(key, type(my_model_json[key]), my_model_json[key]))
+
+class Test_Base_Model(unittest.TestCase):
+
+    def test_save_changes_updated_at_when_called(self):
+        base = BaseModel()
+        time = base.updated_at
+        base.save()
+        self.assertNotEqual(time, base.updated_at)
+    
+    def test_to_dict_returns_datetime_as_string_when_called(self):
+        base = BaseModel()
+        dict = base.to_dict()
+        self.assertEqual(str, type(dict['created_at']))
+
+    def test_id_exist_when_object_creating(self):
+        base = BaseModel()
+        self.assertIsNotNone(self.id)
+
+    def test_str_returns_correct_output_when_called(self):
+        base = BaseModel()
+        expected = f"[{base.__class__.__name__}] ({base.id}) {base.__dict__}"
+        self.assertEqual(base.__str__(), expected)
