@@ -40,8 +40,9 @@ class TestBaseModel(unittest.TestCase):
         self.assertEqual(base.__str__(), expected)
 
     def test_save(self):
-        """Test save method."""
+        """save method"""
         base = BaseModel()
-        sleep(0.6)
+        old = base.updated_at
+        sleep(0.1)
         base.save()
-        self.assertNotEqual(base.created_at, base.updated_at)
+        self.assertNotEquals(old, base.updated_at)
