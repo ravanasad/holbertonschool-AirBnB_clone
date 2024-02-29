@@ -45,4 +45,5 @@ class TestBaseModel(unittest.TestCase):
         old = base.updated_at
         sleep(0.1)
         base.save()
-        self.assertNotEquals(old, base.updated_at)
+        self.assertTrue(os.path.exists("file.json"))
+        self.assertNotEqual(old, base.updated_at)
