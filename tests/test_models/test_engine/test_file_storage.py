@@ -33,7 +33,8 @@ class TestFileStorage(unittest.TestCase):
         """Test save method."""
         base = BaseModel()
         base.save()
-        self.assertIsNotNone(self.storage.all())
+        data = self.storage.all()[base.__class__.__name__ + "." + base.id]
+        self.assertIsNotNone(data)
 
     def test_reload(self):
         """Test reload method."""
