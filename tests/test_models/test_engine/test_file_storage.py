@@ -32,6 +32,7 @@ class TestFileStorage(unittest.TestCase):
     def test_save(self):
         """Test save method."""
         base = BaseModel()
+        base.save()
         self.assertIsNotNone(self.storage.all())
 
     def test_reload(self):
@@ -40,7 +41,8 @@ class TestFileStorage(unittest.TestCase):
         base.save()
         self.storage._FileStorage__objects = {}
         self.storage.reload()
-        self.assertIsNotNone(self.storage.all())
+        data = self.storage.all()[base.__class__.__name__ + "." + base.id]
+        self.assertIsNotNone(data)
 
     def test_file_path(self):
         """Test file_path"""
