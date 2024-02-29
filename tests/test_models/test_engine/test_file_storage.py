@@ -38,6 +38,7 @@ class TestFileStorage(unittest.TestCase):
         """Test reload method."""
         base = BaseModel()
         base.save()
+        self.storage._FileStorage__objects = {}
         self.storage.reload()
         self.assertIsNotNone(self.storage.all())
 
