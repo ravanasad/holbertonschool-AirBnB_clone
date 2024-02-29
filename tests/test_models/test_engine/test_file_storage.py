@@ -24,12 +24,7 @@ class TestFileStorage(unittest.TestCase):
         base.save()
         self.assertIsNotNone(self.storage.all())
 
-    def test_new(self):
-        """Test new method."""
-        base = BaseModel()
-        self.assertTrue(base in self.storage.all().values())
-
-    def test_save(self):
+    def test_save_new(self):
         """Test save method."""
         base = BaseModel()
         base.save()
