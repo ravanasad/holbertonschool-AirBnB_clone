@@ -1,11 +1,19 @@
 #!/usr/bin/python3
+import os
 import unittest
+from time import sleep
+
 from models.base_model import BaseModel
 """This module defines tests for BaseModel class."""
 
 
 class TestBaseModel(unittest.TestCase):
     """Tests for BaseModel class."""
+
+    def tearDown(self):
+        """Set up tearDown method."""
+        if os.path.exists("file.json"):
+            os.remove("file.json")
 
     def test_save_changes_updated_at_when_called(self):
         """Test save method."""
@@ -30,3 +38,10 @@ class TestBaseModel(unittest.TestCase):
         base = BaseModel()
         expected = f"[{base.__class__.__name__}] ({base.id}) {base.__dict__}"
         self.assertEqual(base.__str__(), expected)
+
+    def test_save(self):
+        """Test save method."""
+        base = BaseModel()
+        sleep(0.6)
+        base.save()
+        self.assertNotEqual(base.created_at, base.updated_at)
