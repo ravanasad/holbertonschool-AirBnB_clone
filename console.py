@@ -3,12 +3,16 @@
 import cmd
 from models.base_model import BaseModel
 from models import storage
+from models.user import User
+
+
 class HBNBCommand(cmd.Cmd):
     """This class defines a HBNBCommand."""
 
     prompt = "(hbnb) "
     classes = {
-        "BaseModel" : BaseModel
+        "BaseModel": BaseModel,
+        "User": User
     }
 
     def do_quit(self, line):
@@ -103,6 +107,7 @@ class HBNBCommand(cmd.Cmd):
             else:
                 setattr(storage.all()[key], args[2], args[3])
                 storage.all()[key].save()
+
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
