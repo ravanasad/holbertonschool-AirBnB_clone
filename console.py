@@ -15,21 +15,9 @@ class HBNBCommand(cmd.Cmd):
         """Exits the program."""
         return True
 
-    def do_help(self, arg):
-        """Prints help for the given command."""
-        cmd.Cmd.do_help(self, arg)
-
-    def help_quit(self):
-        """Prints help for the quit command."""
-        print("Quit command to exit the program\n")
-
-    def help_EOF(self):
-        """Prints help for the EOF command."""
-        print("EOF command to exit the program\n")
-
     def emptyline(self):
         """Does nothing on an empty line."""
-        pass
+        return False
 
 
 if __name__ == '__main__':
