@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 import cmd
 """This module defines a HBNBCommand class."""
 
