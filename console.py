@@ -68,6 +68,7 @@ class HBNBCommand(cmd.Cmd):
             for k, v in storage.all().items():
                 if k == f"{args[0]}.{args[1]}":
                     del storage.all()[k]
+                    storage.save()
                     return
         print(result)
 
