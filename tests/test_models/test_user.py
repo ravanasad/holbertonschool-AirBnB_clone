@@ -6,13 +6,11 @@ from models.base_model import BaseModel
 
 class TestUser(unittest.TestCase):
     def test_class_attributes(self):
-        # Access the class attribute through the class itself
         self.assertEqual(User.email, "")
         self.assertEqual(User.password, "")
         self.assertEqual(User.first_name, "")
         self.assertEqual(User.last_name, "")
 
-        # Modify the class attribute and check if it reflects in instances
         User.email = "default@example.com"
         User.password = "default_password"
         User.first_name = "John"
@@ -25,7 +23,6 @@ class TestUser(unittest.TestCase):
         self.assertEqual(user.first_name, "John")
         self.assertEqual(user.last_name, "Doe")
 
-        # Reset the class attribute to its original state
         User.email = ""
         User.password = ""
         User.first_name = ""
