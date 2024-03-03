@@ -18,7 +18,7 @@ class TestReview(unittest.TestCase):
 
         self.assertEqual(rw.place_id, "5")
         self.assertEqual(rw.user_id, "3")
-        self.assertEqual(rw.text_id, "text")
+        self.assertEqual(rw.text, "text")
 
         Review.place_id = ""
         Review.user_id = ""
