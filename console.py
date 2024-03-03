@@ -52,7 +52,7 @@ class HBNBCommand(cmd.Cmd):
         print(result)
 
     def do_show(self, line):
-        """Prints the string representation of 
+        """Prints the string representation of
         an instance based on the class name and id"""
         args = line.split(" ")
         if args == ['']:
@@ -88,7 +88,7 @@ class HBNBCommand(cmd.Cmd):
         print(result)
 
     def do_all(self, line):
-        """Prints all string representation of 
+        """Prints all string representation of
         all instances based or not on the class name"""
         args = line.split(" ")
         if args == ['']:
@@ -96,7 +96,8 @@ class HBNBCommand(cmd.Cmd):
         elif args[0] not in self.classes:
             result = "** class doesn't exist **"
         else:
-            result = [str(v) for k, v in storage.all().items() if k.split(".")[0] == args[0]]
+            result = [str(v) for k, v in storage.all().items()
+                        if k.split(".")[0] == args[0]]
         print(result)
 
     def do_update(self, line):
