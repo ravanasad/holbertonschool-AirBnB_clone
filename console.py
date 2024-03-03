@@ -96,7 +96,7 @@ class HBNBCommand(cmd.Cmd):
         elif args[0] not in self.classes:
             result = "** class doesn't exist **"
         else:
-            result = [str(value) for key, value in storage.all().items()
+            result = [str(v) for k, v in storage.all().items()
                       if k.split(".")[0] == args[0]]
         print(result)
 
