@@ -52,7 +52,8 @@ class HBNBCommand(cmd.Cmd):
         print(result)
 
     def do_show(self, line):
-        """Prints the string representation of an instance based on the class name and id"""
+        """Prints the string representation of 
+        an instance based on the class name and id"""
         args = line.split(" ")
         if args == ['']:
             result = "** class name missing **"
@@ -87,7 +88,8 @@ class HBNBCommand(cmd.Cmd):
         print(result)
 
     def do_all(self, line):
-        """Prints all string representation of all instances based or not on the class name"""
+        """Prints all string representation of 
+        all instances based or not on the class name"""
         args = line.split(" ")
         if args == ['']:
             result = [str(v) for v in storage.all().values()]
@@ -98,7 +100,8 @@ class HBNBCommand(cmd.Cmd):
         print(result)
 
     def do_update(self, line):
-        """Updates an instance based on the class name and id by adding or updating attribute"""
+        """Updates an instance based on the class
+        name and id by adding or updating attribute"""
         args = line.split(" ")
         if args == ['']:
             print("** class name missing **")
