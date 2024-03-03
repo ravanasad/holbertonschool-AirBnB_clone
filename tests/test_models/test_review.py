@@ -6,7 +6,7 @@ from models.base_model import BaseModel
 
 class TestReview(unittest.TestCase):
     def test_class_attributes(self):
-        self.assertEqual(Review.place_id, ""i)
+        self.assertEqual(Review.place_id, "")
         self.assertEqual(Review.user_id, "")
         self.assertEqual(Review.text, "")
 
