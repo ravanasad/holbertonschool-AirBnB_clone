@@ -97,7 +97,7 @@ class HBNBCommand(cmd.Cmd):
             result = "** class doesn't exist **"
         else:
             result = [str(value) for key, value in storage.all().items()
-                   if k.split(".")[0] == args[0]]
+                      if k.split(".")[0] == args[0]]
         print(result)
 
     def do_update(self, line):
