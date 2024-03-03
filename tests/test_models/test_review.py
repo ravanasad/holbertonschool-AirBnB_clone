@@ -1,5 +1,5 @@
 import unittest
-from models.Review import review
+from models.review import Review
 from models.base_model import BaseModel
 """This is the test for the User class"""
 
