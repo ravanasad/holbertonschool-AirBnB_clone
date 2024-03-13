@@ -1,3 +1,3 @@
 # README
 
-## AirBnB clone console app
+## AirBnB clone
